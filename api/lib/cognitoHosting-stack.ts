@@ -49,7 +49,7 @@ export class CognitoHostingStack extends cdk.Stack {
         removalPolicy: cdk.RemovalPolicy.DESTROY,
         });
 
-    this.userPool.addClient('UserPoolClient', {
+    const client = this.userPool.addClient('UserPoolClient', {
         userPoolClientName: 'CognitoHostingUserPoolClient',
         authFlows: {
             userPassword: true,
@@ -69,9 +69,15 @@ export class CognitoHostingStack extends cdk.Stack {
     });
 
 
-
+      new cdk.CfnOutput(this, 'COGNITO_ID=', {
+          value: this.userPool.userPoolId,
+      })
+      new cdk.CfnOutput(this, 'COGNITO_CLIENT_ID=', {
+          value: client.userPoolClientId,
+      })
 
   }
+
 
 
 
