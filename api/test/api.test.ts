@@ -3,11 +3,11 @@
 // import * as Api from '../lib/api-stack';
 
 // example test. To run these tests, uncomment this file along with the
-// example resource in lib/api-stack.ts
+// example resource in lib/cognitoHosting-stack.ts
 test('SQS Queue Created', () => {
 //   const app = new cdk.App();
 //     // WHEN
-//   const stack = new Api.ApiStack(app, 'MyTestStack');
+//   const stack = new Api.CognitoHostingStack(app, 'MyTestStack');
 //     // THEN
 //   const template = Template.fromStack(stack);
 
