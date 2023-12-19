@@ -13,7 +13,6 @@ export class CognitoHostingStack extends cdk.Stack {
         userPoolName: 'CognitoHostingUserPool',
         selfSignUpEnabled: true,
         signInAliases: {
-            username: true,
             email: true,
         },
         autoVerify: {
@@ -31,7 +30,7 @@ export class CognitoHostingStack extends cdk.Stack {
             },
           familyName: {
             required: true,
-            mutable: true,
+            mutable: false,
           }
         },
         customAttributes: {
